@@ -1,27 +1,27 @@
 import React, { useState } from "react";
-import cozy1 from "../../assets/img/products/Ex3.png";
-import CozyKnitwear2 from "../../assets/img/products/Cozy Knitwear2.png";
-import CozyKnitwears from "../../assets/img/products/Cozy Knitwear3.png";
-import CozyKnitwear4 from "../../assets/img/products/Cozy Knitwear4.png";
-import CozyKnitwear5 from "../../assets/img/products/Cozy Knitwear5.png";
-import CozyKnitwear6 from "../../assets/img/products/Cozy Knitwear6.png";
+import cozy1 from "../../assets/img/products/Ex3.jpg";
+import CozyKnitwear2 from "../../assets/img/products/Cozy Knitwear2.jpg";
+import CozyKnitwears from "../../assets/img/products/Cozy Knitwear3.jpg";
+import CozyKnitwear4 from "../../assets/img/products/Cozy Knitwear4.jpg";
+import CozyKnitwear5 from "../../assets/img/products/Cozy Knitwear5.jpg";
+import CozyKnitwear6 from "../../assets/img/products/Cozy Knitwear6.jpg";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 
-import CozyKnitwearimg1 from "../../assets/img/products/Ex3.png"
+import CozyKnitwearimg1 from "../../assets/img/products/Ex3.jpg"
 import CozyKnitwearimg2 from "../../assets/img/products/cozy2.jpg"
 import CozyKnitwearimg3 from "../../assets/img/products/cozy3.jpg"
 import CozyKnitwearimg4 from "../../assets/img/products/cozy1.jpg"
 
-import CozyKnitwear1img1 from "../../assets/img/products/Cozy Knitwear2.png"
-import CozyKnitwear1img2 from "../../assets/img/products/Cozy Knitwear2.1.png"
-import CozyKnitwear1img3 from "../../assets/img/products/Cozy Knitwear2.3.png"
-import CozyKnitwear1img4 from "../../assets/img/products/Cozy Knitwear2.4.png"
+import CozyKnitwear1img1 from "../../assets/img/products/Cozy Knitwear2.jpg"
+import CozyKnitwear1img2 from "../../assets/img/products/Cozy Knitwear2.1.jpg"
+import CozyKnitwear1img3 from "../../assets/img/products/Cozy Knitwear2.3.jpg"
+import CozyKnitwear1img4 from "../../assets/img/products/Cozy Knitwear2.4.jpg"
 
-import CozyKnitwear2img1 from "../../assets/img/products/Cozy Knitwear3.png"
-import CozyKnitwear2img2 from "../../assets/img/products/Cozy Knitwear3.1.png"
-import CozyKnitwear2img3 from "../../assets/img/products/Cozy Knitwear3.2.png"
-import CozyKnitwear2img4 from "../../assets/img/products/Cozy Knitwear3.3.png"
+import CozyKnitwear2img1 from "../../assets/img/products/Cozy Knitwear3.jpg"
+import CozyKnitwear2img2 from "../../assets/img/products/Cozy Knitwear3.1.jpg"
+import CozyKnitwear2img3 from "../../assets/img/products/Cozy Knitwear3.2.jpg"
+import CozyKnitwear2img4 from "../../assets/img/products/Cozy Knitwear3.3.jpg"
 
 
 
@@ -75,18 +75,18 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
           </div>
   
           {/* Product Info */}
-          <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+          {/* <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
             <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
               <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
             </div>
             
-            {/* Product Description */}
+            
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="text-sm font-medium text-gray-900">Description</h2>
               <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
             </div>
   
-            {/* Highlights */}
+          
             <div className="mt-10">
               <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
               <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
@@ -97,7 +97,7 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
                 )}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

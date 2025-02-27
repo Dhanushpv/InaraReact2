@@ -13,14 +13,15 @@ import MenTrackpants2 from "../../assets/img/products/Men'sTrackpants3.png"
 import MenTrackpants3 from "../../assets/img/products/Men'sTrackpants2.png"
 import MenTrackpants4 from "../../assets/img/products/Men'sTrackpants4.png"
 
-import LadiesUnderwear1 from "../../assets/img/products/catlog (11).png"
-import Cozyknitting1 from "../../assets/img/products/Ex3.png"
-import ActiveWear1 from "../../assets/img/products/Ex2.png"
-import LadiesShorts1 from "../../assets/img/products/Ex1.png"
-import MensVest1 from "../../assets/img/products/underwear(s).png"
-import Shorts1 from "../../assets/img/products/catlog (6).png"
-import MensTShirts1 from "../../assets/img/products/tShirt.png"
-import TrackPants1 from "../../assets/img/products/catlog (4).png"
+import LadiesUnderwear1 from "../../assets/img/products/catlog (11).jpg"
+import Cozyknitting1 from "../../assets/img/products/Ex3.jpg"
+import ActiveWear1 from "../../assets/img/products/Ex2.jpg"
+import LadiesShorts1 from "../../assets/img/products/Ex1.jpg"
+import MensVest1 from "../../assets/img/products/underwear(s).jpg"
+import Shorts1 from "../../assets/img/products/catlog (6).jpg"
+import MensTShirts1 from "../../assets/img/products/tShirt.jpg"
+import TrackPants1 from "../../assets/img/products/catlog (4).jpg"
+import { IoMdCloseCircle } from "react-icons/io";
 
 
 
@@ -35,7 +36,7 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
       <div className="p-3 rounded-lg shadow-lg max-w-8xl w-full">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-semibold">{title}</h2>
-          <button className="text-2xl font-semibold" onClick={onClose}>&times;</button>
+          <button className=" font-semibold" onClick={onClose}><IoMdCloseCircle className="w-8 h-8" /></button>
         </div>
 
         {/* Image Gallery */}
@@ -72,18 +73,18 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
         </div>
 
         {/* Product Info */}
-        <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+        {/* <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
           </div>
           
-          {/* Product Description */}
+          
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="text-sm font-medium text-gray-900">Description</h2>
             <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
           </div>
 
-          {/* Highlights */}
+         
           <div className="mt-10">
             <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
             <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
@@ -94,7 +95,7 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
               )}
             </ul>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

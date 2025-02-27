@@ -17,23 +17,80 @@ import Carousel1 from "../../assets/img/hero-carousel/inaraintro1.jpg"
 import Carousel2 from "../../assets/img/hero-carousel/inaraintro2.jpg"
 import Carousel3 from "../../assets/img/hero-carousel/inaraintro3.jpg"
 import Carousel4 from "../../assets/img/hero-carousel/inaraintro4.gif"
-import Ex1 from "../../assets/img/products/Ex1.png"
-import Ex2 from "../../assets/img/products/Ex2.png"
-import Ex3 from "../../assets/img/products/Ex3.png"
-import Ex4 from "../../assets/img/products/Ex4.png"
-import Ex5 from "../../assets/img/products/Ex5.jpeg"
-import Ex6 from "../../assets/img/products/Ex6.png"
-import Ex7 from "../../assets/img/products/Ex7.png"
+import Ex1 from "../../assets/img/products/Ex1.jpg"
+import Ex2 from "../../assets/img/products/Ex2.jpg"
+import Ex3 from "../../assets/img/products/Ex3.jpg"
+import Ex4 from "../../assets/img/products/Ex4.jpg"
+import Ex5 from "../../assets/img/products/Ex5.jpg"
+import Ex6 from "../../assets/img/products/Ex6.jpg"
+import Ex7 from "../../assets/img/products/Ex7.jpg"
 import icon1 from "../../assets/img/icons/Design and Development.png"
 import icon2 from "../../assets/img/icons/Sample Making.png"
 import icon3 from "../../assets/img/icons/Production.png"
-import Services from "../../assets/img/Services/custom_services4.png"
+import Services from "../../assets/img/Services/custom_services4.jpg"
 import AltServices from "../../assets/img/cotton2.jpg"
-import Inaraicon from "../../assets/img/icons/inaralogo2.png"
+import Inaraicon from "../../assets/img/icons/inara2.png"
 
 
 
 function Home() {
+   const [formData, setFormData] = useState({
+      name: "",
+      email: "",
+      phone: "", 
+      subject: "",
+      message: "",
+    });
+  
+    const [responseMessage, setResponseMessage] = useState("");
+    const [loading, setLoading] = useState(false);
+  
+    const handleChange = (e) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+  
+  
+    
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      
+      setLoading(true); // Show loading state
+      setResponseMessage(""); // Clear previous messages
+    
+      const now = new Date();
+      const currentDate = now.toISOString().split("T")[0]; // YYYY-MM-DD format
+      const currentTime = now.toLocaleTimeString("en-US", { hour12: false }); // HH:MM:SS format (24-hour)
+    
+      const formDataWithDateTime = {
+        ...formData,
+        date: currentDate,
+        time: currentTime,
+      };
+    
+      try {
+        await fetch(
+          "https://script.google.com/macros/s/AKfycbzsUehQHuXwbgb-QpUQfcikv_VhFFTRP-SPHNhH2OWoYGn5ahGHd0Eiqz2p0t9maos9/exec",
+          {
+            method: "POST",
+            mode: "no-cors", // Since no-cors prevents fetching response data, we assume success
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formDataWithDateTime),
+          }
+        );
+    
+        // Show success message and clear form
+        setResponseMessage("Message sent successfully!");
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" }); // Reset form fields
+      } catch (error) {
+        console.error("Error:", error);
+        setResponseMessage("An error occurred. Please try again.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    
 
   // useEffect(() => {
 
@@ -308,7 +365,7 @@ return (
                 This includes conceptualizing clothing designs, creating
                 patterns, and selecting fabrics.
               </p>
-              <a href="./services.html" className="readmore stretched-link">
+              <a onClick={() => navigate("/Services")} className="readmore stretched-link">
                 Read more <i className="bi bi-arrow-right" />
               </a>
             </div>
@@ -334,7 +391,7 @@ return (
                 Before full production, samples are created to finalize designs
                 and ensure quality.
               </p>
-              <a href="./services.html" className="readmore stretched-link">
+              <a onClick={() => navigate("/Services")} className="readmore stretched-link">
                 Read more <i className="bi bi-arrow-right" />
               </a>
             </div>
@@ -361,7 +418,7 @@ return (
                 sewing, and finishing garments. This stage often includes bulk
                 production.
               </p>
-              <a href="./services.html" className="readmore stretched-link">
+              <a onClick={() => navigate("/Services")} className="readmore stretched-link">
                 Read more <i className="bi bi-arrow-right" />
               </a>
             </div>
@@ -369,7 +426,7 @@ return (
           {/* End Service Item */}
         </div>
         <div className=" text-center pt-4 services-more" data-aos="fade-up">
-          <a href="./services.html">
+          <span onClick={() => navigate("/Services")} >
             <button className="btn text-center">
               Know more
               <svg
@@ -390,7 +447,7 @@ return (
                 ></path>
               </svg>
             </button>
-          </a>
+          </span>
         </div>
       </div>
     </section>
@@ -523,8 +580,7 @@ return (
                   width={100}
                 />
                 <p className="text-gray-700">
-                  Tether supports and empowers growing ventures and innovation
-                  as a digital token built on multiple blockchains.
+                Our fashion empowers and inspires confidence, blending innovation with timeless style.
                 </p>
                 <div className="flex space-x-4 mt-4">
                   <a className="text-gray-500 hover:text-gray-700" href="#">
@@ -549,64 +605,67 @@ return (
                 <p className="text-gray-500 mb-6">
                   24/7 We will answer your questions and problems
                 </p>
-                <form>
-                  <div className="flex flex-wrap gap-4 mb-4">
-                    <div className="flex-1">
-                      <label className="block text-gray-700">
-                      <FaUser  className="w-8"/>
-                        <input
-                          className="w-full border border-gray-300 rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                          placeholder="First Name"
-                          type="text"
-                        />
-                      </label>
-                    </div>
-                    <div className="flex-1 pt-3 ">
-                      <label className="block text-gray-700">
-                        <input
-                          className="w-full border border-gray-300 rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                          placeholder="Last Name"
-                          type="text"
-                        />
-                      </label>
-                    </div>
+                <form onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <input
+                      className="border border-gray-300 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-[#9AC8F7]"
+                      placeholder="Your Name"
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                    />
+                    <input
+                      className="border border-gray-300 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-[#9AC8F7]"
+                      placeholder="Your Email"
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
-                  <div className="mb-4 ">
-                    <label className="block text-gray-700 w-full">
-                    <PiEnvelopeSimpleFill className="w-8" />
-                      <input
-                        className="w-full border border-gray-300 rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Email"
-                        type="email"
-                      />
-                    </label>
-                  </div>
-                  <div className="mb-4">
-                    <label className="block text-gray-700 w-full">
-                    <MdOutlinePhone className="w-8"/>
-                      <input
-                        className="w-full border border-gray-300 rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Phone"
-                        type="tel"
-                      />
-                    </label>
-                  </div>
-                  <div className="mb-4">
-                    <label className="block text-gray-700 w-full">
-                      <textarea
-                        className="w-full border border-gray-300 rounded p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Describe your issue"
-                        defaultValue={""}
-                      />
-                    </label>
-                  </div>
+                  <input
+                    className="border border-gray-300 p-2 rounded-lg w-full mb-4 focus:outline-none focus:ring-2 focus:ring-[#9AC8F7]"
+                    placeholder="Your Phone Number"
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                  <input
+                    className="border border-gray-300 p-2 rounded-lg w-full mb-4 focus:outline-none focus:ring-2 focus:ring-[#9AC8F7]"
+                    placeholder="Subject"
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                  />
+                  <textarea
+                    className="border border-gray-300 p-2 rounded-lg w-full mb-4 focus:outline-none focus:ring-2 focus:ring-[#9AC8F7]"
+                    placeholder="Message"
+                    rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
                   <button
-                    className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+                    className="bg-[#9AC8F7] text-white py-2 px-4 rounded-lg w-full hover:bg-[#7ab6e5] transition duration-300"
                     type="submit"
+                    disabled={loading}
                   >
-                    Send
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
+                 
                 </form>
+                {responseMessage && (
+                  <p className="text-center mt-2 text-green-600">{responseMessage}</p>
+                )}
+
               </div>
             </div>
           </div>

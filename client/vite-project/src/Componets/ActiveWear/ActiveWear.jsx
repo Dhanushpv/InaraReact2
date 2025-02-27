@@ -1,24 +1,21 @@
 import React, { useState } from "react"; 
-import ActiveWear1 from "../../assets/img/products/Active Wear1.png";
-import ActiveWear2 from "../../assets/img/products/Active Wear2.png";
-import ActiveWear3 from "../../assets/img/products/Active Wear3.png";
+import ActiveWear1 from "../../assets/img/products/Active Wear1.jpg";
+import ActiveWear2 from "../../assets/img/products/Active Wear2.jpg";
+import ActiveWear3 from "../../assets/img/products/Active Wear3.jpg";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 
-import ActiveWearimg1 from "../../assets/img/products/Active Wear1.png"
+import ActiveWearimg1 from "../../assets/img/products/Active Wear1.jpg"
 import ActiveWearimg2 from "../../assets/img/products/Active Wear1.3.png"
 import ActiveWearimg3 from "../../assets/img/products/Active Wear1.2.png"
-import ActiveWearimg4 from "../../assets/img/products/Active Wear1.5.png"
+import ActiveWearimg4 from "../../assets/img/products/Active Wear1.5.jpg"
 
 import Nightwear1 from "../../assets/img/products/Nightwear2.png"
-import Nightwear2 from "../../assets/img/products/Active Wear2.png"
+import Nightwear2 from "../../assets/img/products/Active Wear2.jpg"
 import Nightwear3 from "../../assets/img/products/Nightwear3.png"
 import Nightwear4 from "../../assets/img/products/Nightwear1.png"
 
-import Sleevelessimg1 from "../../assets/img/products/Sleeveless Top1.png"
-import Sleevelessimg2 from "../../assets/img/products/Sleeveless Top4.jpg"
-import Sleevelessimg3 from "../../assets/img/products/Sleeveless Top3.jpg"
-import Sleevelessimg4 from "../../assets/img/products/Sleeveless Top2.jpg"
+
 
 
 
@@ -69,18 +66,18 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
           </div>
   
           {/* Product Info */}
-          <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+          {/* <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
             <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
               <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
             </div>
             
-            {/* Product Description */}
+         
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="text-sm font-medium text-gray-900">Description</h2>
               <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
             </div>
   
-            {/* Highlights */}
+           
             <div className="mt-10">
               <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
               <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
@@ -91,7 +88,7 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
                 )}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

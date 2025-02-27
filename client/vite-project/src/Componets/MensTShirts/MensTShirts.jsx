@@ -1,7 +1,7 @@
 import React, { useState }  from "react";
 import Footer from "../Footer/Footer";
 import Nav from "../Nav/Nav";
-import tShirt from "../../assets/img/products/tShirt.png";
+import tShirt from "../../assets/img/products/tShirt.jpg";
 import MensPoloTShirts from "../../assets/img/products/MensPoloTShirts.png";
 import  OversizedTshirt from "../../assets/img/products/OversizedT-shirt.png";
 
@@ -70,18 +70,18 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
           </div>
   
           {/* Product Info */}
-          <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+          {/* <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
             <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
               <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
             </div>
             
-            {/* Product Description */}
+            
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="text-sm font-medium text-gray-900">Description</h2>
               <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
             </div>
   
-            {/* Highlights */}
+    
             <div className="mt-10">
               <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
               <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
@@ -92,7 +92,7 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
                 )}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

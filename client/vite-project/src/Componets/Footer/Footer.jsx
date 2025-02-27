@@ -38,7 +38,7 @@ function Footer() {
                 </a>
               </div>
             </div>
-            <div className="col-lg-2 col-md-3 footer-links">
+            <div className="col-lg-3 col-md-3 footer-links">
               <h4>Useful Links</h4>
               <ul>
                 <li>
@@ -58,7 +58,7 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="col-lg-2 col-md-3 footer-links">
+            <div className="col-lg-3 col-md-3 footer-links">
               <h4>Our Services</h4>
               <ul>
                 <li>
@@ -98,7 +98,7 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="col-lg-2 col-md-3 footer-links">
+            {/* <div className="col-lg-2 col-md-3 footer-links">
               <h4>Our Services3</h4>
               <ul>
                 <li>
@@ -117,7 +117,7 @@ function Footer() {
                   <a href="#">Pressing</a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="container copyright text-center mt-4">

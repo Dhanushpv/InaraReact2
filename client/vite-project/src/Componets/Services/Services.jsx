@@ -3,19 +3,19 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 import Banner from "../../assets/img/wooden-table.jpg"
-import Servicesimg1 from "../../assets/img/Services/services (5).png"
-import OurServices1 from "../../assets/img/Services/sample_services1.png"
-import OurServices2 from "../../assets/img/Services/sample_services3.png"
-import OurServices3 from "../../assets/img/Services/sample_services4.png"
-import OurServices4 from "../../assets/img/Services/sample_services5.png"
-import privateservices1 from "../../assets/img/Services/private_services1.png"
-import privateservices2 from "../../assets/img/Services/private_services2.png"
-import privateservices3 from "../../assets/img/Services/private_services3.png"
-import privateservices4 from "../../assets/img/Services/private_services4.png"
-import CustomisedService1 from "../../assets/img/Services/custom_services1.png"
-import CustomisedService2 from "../../assets/img/Services/custom_services2.png"
-import CustomisedService3 from "../../assets/img/Services/custom_services3.png"
-import CustomisedService4 from "../../assets/img/Services/custom_services4.png"
+import Servicesimg1 from "../../assets/img/Services/services (5).jpg"
+import OurServices1 from "../../assets/img/Services/sample_services1.jpg"
+import OurServices2 from "../../assets/img/Services/sample_services3.jpg"
+import OurServices3 from "../../assets/img/Services/sample_services4.jpg"
+import OurServices4 from "../../assets/img/Services/sample_services5.jpg"
+import privateservices1 from "../../assets/img/Services/private_services1.jpg"
+import privateservices2 from "../../assets/img/Services/private_services2.jpg"
+import privateservices3 from "../../assets/img/Services/private_services3.jpg"
+import privateservices4 from "../../assets/img/Services/private_services4.jpg"
+import CustomisedService1 from "../../assets/img/Services/custom_services1.jpg"
+import CustomisedService2 from "../../assets/img/Services/custom_services2.jpg"
+import CustomisedService3 from "../../assets/img/Services/custom_services3.jpg"
+import CustomisedService4 from "../../assets/img/Services/custom_services4.jpg"
 
 
 
