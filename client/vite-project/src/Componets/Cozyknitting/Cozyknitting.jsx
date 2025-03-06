@@ -32,7 +32,9 @@ import { IoMdCloseCircle } from "react-icons/io";
 const ProductImages = ({ title, images = [], onClose, Highlights, Discription, Name }) => {
     // Ensure Highlights is always an array
     Highlights = typeof Highlights === "string" ? Highlights.split(",") : Highlights;
-
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
     return (
       <div className=" inset-0 flex items-center justify-center   w-full">
         <div className="p-3 rounded-lg shadow-lg max-w-8xl w-full">

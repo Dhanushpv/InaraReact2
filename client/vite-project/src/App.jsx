@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './Componets/Home/Home.jsx';
@@ -17,6 +17,10 @@ import MensTShirts from './Componets/MensTShirts/MensTShirts.jsx';
 import './Componets/Home/Home.css';
 
 function App() {
+
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
   return (
     <div className=''>
       <Router>
