@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import mensundergarments2 from "../../assets/img/products/mensundergarments2.png";
+import mensundergarments2 from "../../assets/img/products/mensundergarments2.jpg";
 import underwear from "../../assets/img/products/underwear(s).jpg";
-import mensundergarments3 from "../../assets/img/products/mensundergarments3.png";
+import mensundergarments3 from "../../assets/img/products/mensundergarments3.jpg";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 
-import MensVest1 from "../../assets/img/products/MensVest.png"
-import MensVest2 from "../../assets/img/products/MensVest1.png"
-import MensVest3 from "../../assets/img/products/MensVest2.png"
+import MensVest1 from "../../assets/img/products/MensVest.jpg"
+import MensVest2 from "../../assets/img/products/MensVest1.jpg"
+import MensVest3 from "../../assets/img/products/MensVest2.jpg"
 import MensVest4 from "../../assets/img/products/MensVest4.png"
 
-import MensTrunks1 from "../../assets/img/products/mensundergarments1.png"
-import MensTrunks2 from "../../assets/img/products/MensTrunks1.png"
-import MensTrunks3 from "../../assets/img/products/MensTrunks3.png"
-import MensTrunks4 from "../../assets/img/products/MensTrunks2.png"
+import MensTrunks1 from "../../assets/img/products/mensundergarments1.jpg"
+import MensTrunks2 from "../../assets/img/products/MensTrunks1.jpg"
+import MensTrunks3 from "../../assets/img/products/MensTrunks3.jpg"
+import MensTrunks4 from "../../assets/img/products/MensTrunks2.jpg"
 
-import MenBriefs1 from "../../assets/img/products/MenBriefs.png"
-import MenBriefs2 from "../../assets/img/products/MenBriefs1.png"
-import MenBriefs3 from "../../assets/img/products/MenBriefs2.png"
-import MenBriefs4 from "../../assets/img/products/mensundergarments3.png"
+import MenBriefs1 from "../../assets/img/products/MenBriefs.jpg"
+import MenBriefs2 from "../../assets/img/products/MenBriefs1.jpg"
+import MenBriefs3 from "../../assets/img/products/MenBriefs2.jpg"
+import MenBriefs4 from "../../assets/img/products/mensundergarments3.jpg"
+import { IoMdCloseCircle } from "react-icons/io";
 
 
 
@@ -35,8 +36,7 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
         <div className="p-3 rounded-lg shadow-lg max-w-8xl w-full">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-semibold">{title}</h2>
-            <button className="text-2xl font-semibold" onClick={onClose}>&times;</button>
-          </div>
+            <button className=" font-semibold" onClick={onClose}><IoMdCloseCircle className="w-8 h-8" /></button>          </div>
   
           {/* Image Gallery */}
           <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 ">
@@ -72,29 +72,29 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
           </div>
   
           {/* Product Info */}
-          {/* <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-            <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
-            </div>
+          <div className="mx-auto max-w-2xl px-4 pt-10 sm:px-6 lg:max-w-7xl lg:px-8 lg:pt-16 lg:pb-24 lg:grid lg:grid-cols-2 lg:gap-x-8">
+  
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
             
-            
-            <div className="mt-4 lg:row-span-3 lg:mt-0">
+            <div className="mt-4">
               <h2 className="text-sm font-medium text-gray-900">Description</h2>
               <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
             </div>
-  
-            
-            <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
-              <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
-                {Array.isArray(Highlights) && Highlights.length > 0 ? (
-                  Highlights.map((highlight, index) => <li key={index}>{highlight}</li>)
-                ) : (
-                  <li>No highlights available.</li>
-                )}
-              </ul>
-            </div>
-          </div> */}
+          </div>
+          
+          <div className="mt-4 lg:mt-0">
+            <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
+            <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
+              {Array.isArray(Highlights) && Highlights.length > 0 ? (
+                Highlights.map((highlight, index) => <li key={index}>{highlight}</li>)
+              ) : (
+                <li>No highlights available.</li>
+              )}
+            </ul>
+          </div>
+          
+        </div>
         </div>
       </div>
     );
@@ -109,12 +109,18 @@ const MensShorts = () => {
     setVisibleProductId((prevId) => (prevId === productId ? null : productId));
   };
 
-
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const MenShorts1 = [
     {
       id: "ActiveWear-images",
-      title: "MensVest",
+      title: "Men’s Vest",
+      Discription:"A men’s vest is a sleeveless upper-body garment that is typically worn as an inner layer or as part of formal or casual outfits. It serves various purposes, including providing comfort, absorbing sweat, and enhancing style.",
+      Name : "Men’s Vest",
+      Highlights:"Soft & Breathable Fabric – Commonly made of cotton depending on the type.,Snug & Comfortable Fit – Designed to be lightweight and non-restrictive.,Versatile Use – Can be worn as innerwear casual wear or part of formal attire.,Stretchable & Durable – Ensures flexibility and long-lasting use.",
       images: [
         { src: MensVest1, alt: "Image 1" },
         { src: MensVest2, alt: "Image 2" },
@@ -126,7 +132,10 @@ const MensShorts = () => {
   const MenShorts2 = [
     {
       id: "ActiveWear-images1",
-      title: "MensTrunks",
+      title: "Boxer Briefs ",
+      Discription:"Boxer briefs are a modern men’s underwear style that combines the support of briefs with the coverage of boxers. They provide a snug yet comfortable fit, making them ideal for everyday wear, sports, and formal dressing alike   ",
+      Name : "Boxer Briefs ",
+      Highlights:"Snug & Supportive Fit – Provides excellent support while maintaining flexibility.,Breathable & Moisture-Wicking – Keeps you cool and dry throughout the day.,Comfortable Waistband – Ensures a secure fit without causing discomfort.,Durable & Stretchable – Made to last and move with your body.",
       images: [
         { src: MensTrunks1, alt: "Image 1" },
         { src: MensTrunks2, alt: "Image 2" },
@@ -138,7 +147,10 @@ const MensShorts = () => {
   const MenShorts3 = [
     {
       id: "ActiveWear-images2",
-      title: "MenBriefs",
+      title: "Men’s Briefs ",
+      Discription:"Men’s briefs are a classic and essential underwear style designed for maximum support, comfort, and flexibility. They feature a snug fit, minimal leg coverage, and a supportive pouch, making them an ideal choice for daily wear, sports, and formal dressing.",
+      Name : "Men’s Briefs ",
+      Highlights:"Soft & Breathable Fabric – Commonly made of cotton depending on the type.,Snug & Comfortable Fit – Designed to be lightweight and non-restrictive.,Versatile Use – Can be worn as innerwear casual wear or part of formal attire.,Stretchable & Durable – Ensures flexibility and long-lasting use.",
       images: [
         { src: MenBriefs1, alt: "Image 1" },
         { src: MenBriefs2, alt: "Image 2" },

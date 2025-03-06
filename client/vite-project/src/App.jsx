@@ -1,7 +1,5 @@
-
-
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './Componets/Home/Home.jsx';
 import About from './Componets/About/About.jsx';
@@ -16,13 +14,10 @@ import MensVest from './Componets/MensVest/MensVest.jsx';
 import MensShorts from './Componets/MensShorts/MensShorts.jsx';
 import MensTShirts from './Componets/MensTShirts/MensTShirts.jsx';
 
+import './Componets/Home/Home.css';
 
-import '../src/Componets/Home/Home.css';
 function App() {
   return (
-   
-     
-
     <div className=''>
       <Router>
         <Routes>
@@ -37,14 +32,13 @@ function App() {
           <Route path='/ActiveWear' element={<ActiveWear />} />
           <Route path='/LadiesShorts' element={<LadiesShorts />} />
           <Route path='/MensVest' element={<MensVest />} />
-          <Route path='/MensShorts' element={<MensShorts/>}/>
-          <Route path='/MensTShirts' element={<MensTShirts/>}/>
-          
+          <Route path='/MensShorts' element={<MensShorts />} />
+          <Route path='/MensTShirts' element={<MensTShirts />} />
         </Routes>
       </Router>
     </div>
-    
   );
 }
 
 export default App;
+  

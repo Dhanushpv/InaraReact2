@@ -1,25 +1,25 @@
-import React, { useState } from "react";
-
-import ladiesShorts from "../../assets/img/products/ladiesShorts.png";
-import ladiesShorts2 from "../../assets/img/products/ladiesShorts2.png";
-import ladiesShorts4 from "../../assets/img/products/ladiesShorts4.png";
+import React, { useEffect, useState } from "react";
+import { IoMdCloseCircle } from "react-icons/io";
+import ladiesShorts from "../../assets/img/products/ladiesShorts.jpg";
+import ladiesShorts2 from "../../assets/img/products/ladiesShorts2.jpg";
+import ladiesShorts4 from "../../assets/img/products/ladiesShorts4.jpg";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 
-import ladiesShortsimg1 from "../../assets/img/products/ladiesShorts.png"
-import ladiesShortsimg2 from "../../assets/img/products/ladiesShorts1.3.png"
-import ladiesShortsimg3 from "../../assets/img/products/ladiesShorts1.1.png"
-import ladiesShortsimg4 from "../../assets/img/products/ladiesShorts1.2.png"
+import ladiesShortsimg1 from "../../assets/img/products/ladiesShorts.jpg"
+import ladiesShortsimg2 from "../../assets/img/products/ladiesShorts1.3.jpg"
+import ladiesShortsimg3 from "../../assets/img/products/ladiesShorts1.1.jpg"
+import ladiesShortsimg4 from "../../assets/img/products/ladiesShorts1.2.jpg"
 
 import ButterFlyShortsimg1 from "../../assets/img/products/ButterFlyShorts3.jpg"
 import ButterFlyShortsimg2 from "../../assets/img/products/ButterFlyShorts2.jpg"
 import ButterFlyShortsimg3 from "../../assets/img/products/ButterFlyShorts1.jpg"
 import ButterFlyShortsimg4 from "../../assets/img/products/ButterFlyShorts4.jpg"
 
-import BermudaShortsimg1 from "../../assets/img/products/ladiesShorts4.png"
-import BermudaShortsimg2 from "../../assets/img/products/BermudaShorts1.png"
-import BermudaShortsimg3 from "../../assets/img/products/BermudaShorts2.png"
-import BermudaShortsimg4 from "../../assets/img/products/BermudaShorts3.png"
+import BermudaShortsimg1 from "../../assets/img/products/ladiesShorts4.jpg"
+import BermudaShortsimg2 from "../../assets/img/products/BermudaShorts1.jpg"
+import BermudaShortsimg3 from "../../assets/img/products/BermudaShorts2.jpg"
+import BermudaShortsimg4 from "../../assets/img/products/BermudaShorts3.jpg"
 
 
 
@@ -34,7 +34,7 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
         <div className="p-3 rounded-lg shadow-lg max-w-8xl w-full">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-semibold">{title}</h2>
-            <button className="text-2xl font-semibold" onClick={onClose}>&times;</button>
+            <button className=" font-semibold" onClick={onClose}><IoMdCloseCircle className="w-8 h-8" /></button>
           </div>
   
           {/* Image Gallery */}
@@ -71,29 +71,29 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
           </div>
   
           {/* Product Info */}
-          {/* <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-            <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
-            </div>
+          <div className="mx-auto max-w-2xl px-4 pt-10 sm:px-6 lg:max-w-7xl lg:px-8 lg:pt-16 lg:pb-24 lg:grid lg:grid-cols-2 lg:gap-x-8">
+  
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
             
-           
-            <div className="mt-4 lg:row-span-3 lg:mt-0">
+            <div className="mt-4">
               <h2 className="text-sm font-medium text-gray-900">Description</h2>
               <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
             </div>
-  
-            
-            <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
-              <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
-                {Array.isArray(Highlights) && Highlights.length > 0 ? (
-                  Highlights.map((highlight, index) => <li key={index}>{highlight}</li>)
-                ) : (
-                  <li>No highlights available.</li>
-                )}
-              </ul>
-            </div>
-          </div> */}
+          </div>
+          
+          <div className="mt-4 lg:mt-0">
+            <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
+            <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
+              {Array.isArray(Highlights) && Highlights.length > 0 ? (
+                Highlights.map((highlight, index) => <li key={index}>{highlight}</li>)
+              ) : (
+                <li>No highlights available.</li>
+              )}
+            </ul>
+          </div>
+          
+        </div>
         </div>
       </div>
     );
@@ -108,12 +108,20 @@ const LadiesShorts = () => {
     setVisibleProductId((prevId) => (prevId === productId ? null : productId));
   };
 
+    
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
 
   const LadiesShorts1 = [
     {
       id: "ActiveWear-images",
-      title: "LadiesShorts",
+      title: "BOXER-STYLE SHORTS",
+      Discription:"Stay comfortable and effortlessly stylish with our Boxer-Style Shorts, designed for a relaxed fit and breathable feel. Inspired by classic boxer designs, these shorts offer lightweight comfort and easy movement, making them perfect for lounging, casual wear, or sleepwear.Crafted from soft, airy fabrics, they provide maximum breathability while ensuring a chic and sporty look. The elastic waistband offers a secure yet flexible fit for all-day ease.",
+      Name : "BOXER-STYLE SHORTS",
+      Highlights:"Soft & Breathable Fabric: Keeps you cool and comfortable,Relaxed Fit: Ideal for lounging sleeping or casual outings, Elastic Waistband: Ensures a secure yet flexible fit.",
       images: [
         { src: ladiesShortsimg1, alt: "Image 1" },
         { src: ladiesShortsimg2, alt: "Image 2" },
@@ -125,7 +133,10 @@ const LadiesShorts = () => {
   const LadiesShorts2 = [
     {
       id: "ActiveWear-images1",
-      title: "ButterFlyShorts",
+      title: "BUTTERFLY SHORTS",
+      Discription:"Add a touch of style and comfort to your wardrobe with our Butterfly Shorts. Designed with a flattering curved hem, these shorts offer a feminine and sporty look while ensuring ease of movement. Perfect for casual wear, lounging, workouts, or beach outings, they provide a lightweight and breathable fit for all-day comfort.Crafted from soft, airy fabrics, these shorts keep you cool and comfortable, while the elastic waistband ensures a secure yet flexible fit.",
+      Name : "BUTTERFLY SHORTS",
+      Highlights:"Curved Hem Design: Enhances style and ease of movement.,Soft & Breathable Fabric: Keeps you cool and comfortable.,Versatile Wear: Ideal for casual outings lounging or workouts.",
       images: [
         { src: ButterFlyShortsimg1, alt: "Image 1" },
         { src: ButterFlyShortsimg2, alt: "Image 2" },
@@ -137,7 +148,11 @@ const LadiesShorts = () => {
   const LadiesShorts3 = [
     {
       id: "ActiveWear-images2",
-      title: "BermudaShorts",
+      title: "Bermuda Shorts",
+      Discription:"Bermuda shorts made from cotton, denim, or linen provide the perfect combination of comfort and style. Designed for flexibility and ease of movement, these shorts are ideal for both casual and semi-formal wear.",
+      Name : "Bermuda Shorts",
+      Highlights:"Soft & Breathable Fabric – Made from cotton denim or linen ensuring all-day comfort and a lightweight feel., Flexible & Stretchable Fit – Offers ease of movement making it perfect for everyday activities., Knee-Length Design – Provides a stylish yet modest look suitable for various occasions.,  Elastic or Adjustable Waistband – Ensures a secure and comfortable fit., Versatile Styling – Can be paired with t-shirts blouses or casual jackets for different outfit combinations.",
+      
       images: [
         { src: BermudaShortsimg1, alt: "Image 1" },
         { src: BermudaShortsimg2, alt: "Image 2" },

@@ -1,24 +1,25 @@
-import React, { useState }  from "react";
+import React, { useEffect, useState }  from "react";
 import Footer from "../Footer/Footer";
 import Nav from "../Nav/Nav";
 import tShirt from "../../assets/img/products/tShirt.jpg";
-import MensPoloTShirts from "../../assets/img/products/MensPoloTShirts.png";
-import  OversizedTshirt from "../../assets/img/products/OversizedT-shirt.png";
+import MensPoloTShirts from "../../assets/img/products/MensPoloTShirts.jpg";
+import  OversizedTshirt from "../../assets/img/products/OversizedT-shirt.jpg";
 
-import MensTShirtsimg1 from "../../assets/img/products/MensTShirts4.png"
-import MensTShirtsimg2 from "../../assets/img/products/MensTShirts1.png"
-import MensTShirtsimg3 from "../../assets/img/products/MensTShirts2.png"
-import MensTShirtsimg4 from "../../assets/img/products/MensTShirts3.png"
+import MensTShirtsimg1 from "../../assets/img/products/MensTShirts4.jpg"
+import MensTShirtsimg2 from "../../assets/img/products/MensTShirts1.jpg"
+import MensTShirtsimg3 from "../../assets/img/products/MensTShirts2.jpg"
+import MensTShirtsimg4 from "../../assets/img/products/MensTShirts3.jpg"
 
-import PoloTShirts1 from "../../assets/img/products/MensPoloTShirts1.png"
-import PoloTShirts2 from "../../assets/img/products/MensPoloTShirts2.png"
-import PoloTShirts3 from "../../assets/img/products/MensPoloTShirts3.png"
-import PoloTShirts4 from "../../assets/img/products/MensPoloTShirts4.png"
+import PoloTShirts1 from "../../assets/img/products/MensPoloTShirts1.jpg"
+import PoloTShirts2 from "../../assets/img/products/MensPoloTShirts2.jpg"
+import PoloTShirts3 from "../../assets/img/products/MensPoloTShirts3.jpg"
+import PoloTShirts4 from "../../assets/img/products/MensPoloTShirts4.jpg"
 
-import OversizedTshirtimg1 from "../../assets/img/products/OversizedT-shirt1.png"
-import OversizedTshirtimg2 from "../../assets/img/products/OversizedT-shirt2.png"
-import OversizedTshirtimg3 from "../../assets/img/products/OversizedT-shirt3.png"
-import OversizedTshirtimg4 from "../../assets/img/products/OversizedT-shirt4.png"
+import OversizedTshirtimg1 from "../../assets/img/products/OversizedT-shirt1.jpg"
+import OversizedTshirtimg2 from "../../assets/img/products/OversizedT-shirt2.jpg"
+import OversizedTshirtimg3 from "../../assets/img/products/OversizedT-shirt3.jpg"
+import OversizedTshirtimg4 from "../../assets/img/products/OversizedT-shirt4.jpg"
+import { IoMdCloseCircle } from "react-icons/io";
 
 
 
@@ -33,8 +34,7 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
         <div className="p-3 rounded-lg shadow-lg max-w-8xl w-full">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-semibold">{title}</h2>
-            <button className="text-2xl font-semibold" onClick={onClose}>&times;</button>
-          </div>
+            <button className=" font-semibold" onClick={onClose}><IoMdCloseCircle className="w-8 h-8" /></button>          </div>
   
           {/* Image Gallery */}
           <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 ">
@@ -70,29 +70,29 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
           </div>
   
           {/* Product Info */}
-          {/* <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-            <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
-            </div>
+          <div className="mx-auto max-w-2xl px-4 pt-10 sm:px-6 lg:max-w-7xl lg:px-8 lg:pt-16 lg:pb-24 lg:grid lg:grid-cols-2 lg:gap-x-8">
+  
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
             
-            
-            <div className="mt-4 lg:row-span-3 lg:mt-0">
+            <div className="mt-4">
               <h2 className="text-sm font-medium text-gray-900">Description</h2>
               <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
             </div>
-  
-    
-            <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
-              <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
-                {Array.isArray(Highlights) && Highlights.length > 0 ? (
-                  Highlights.map((highlight, index) => <li key={index}>{highlight}</li>)
-                ) : (
-                  <li>No highlights available.</li>
-                )}
-              </ul>
-            </div>
-          </div> */}
+          </div>
+          
+          <div className="mt-4 lg:mt-0">
+            <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
+            <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
+              {Array.isArray(Highlights) && Highlights.length > 0 ? (
+                Highlights.map((highlight, index) => <li key={index}>{highlight}</li>)
+              ) : (
+                <li>No highlights available.</li>
+              )}
+            </ul>
+          </div>
+
+        </div>
         </div>
       </div>
     );
@@ -106,12 +106,18 @@ function MensTShirts() {
       setVisibleProductId((prevId) => (prevId === productId ? null : productId));
     };
   
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   
   
     const TShirts = [
       {
         id: "ActiveWear-images",
-        title: "T-Shirts",
+        title: "Crew Neck T-Shirt",
+        Discription:"A crew neck T-shirt is a timeless and essential wardrobe staple known for its round, close-fitting neckline and simple yet stylish design. These T-shirts offer a clean, casual look that suits various occasions, from everyday wear to layering under jackets and sweaters.",
+        Name : "Crew Neck T-Shirt",
+        Highlights:"Round Neckline – Sits close to the base of the neck for a classic fit.,Soft & Breathable Fabric – Typically made from cotton.,Versatile Styling – Can be worn casually or as a layering piece under jackets hoodies or blazers.,Durable & Easy to Maintain – High-quality crew necks retain their shape after multiple washes.,Available in Various Colors & Patterns – Choose from solid colors stripes and graphic prints.",
         images: [
           { src: MensTShirtsimg1, alt: "Image 1" },
           { src: MensTShirtsimg2, alt: "Image 2" },
@@ -123,7 +129,10 @@ function MensTShirts() {
     const PoloTShirts = [
       {
         id: "ActiveWear-images1",
-        title: "Polo T-Shirts",
+        title: "Polo Shirts ",
+        Discription:"A polo shirt is a short-sleeved, collared shirt with a buttoned placket at the neckline. It offers a perfect balance between casual and formal wear, making it ideal for work, sports, and everyday fashion. Originally designed for tennis and golf, polo shirts have become a wardrobe essential for men and women.",
+        Name : "Polo Shirts ",
+        Highlights:"Collared Design – Features a soft or structured collar for a refined look.,Buttoned Placket – Offers a versatile neckline that can be worn open or closed.,Short Sleeves – Provides a comfortable fit for warm weather.,Breathable Fabric – Typically made from cotton or polyester blends.,Versatile Styling – Can be dressed up or down for various occasions., Available in Various Colors & Patterns – Choose from solid colors stripes and graphic prints.", 
         images: [
           { src: PoloTShirts1, alt: "Image 1" },
           { src: PoloTShirts2, alt: "Image 2" },
@@ -136,6 +145,9 @@ function MensTShirts() {
       {
         id: "ActiveWear-images2",
         title: "OversizedT-shirt",
+        Discription:"An oversized T-shirt is a loose-fitting top with a relaxed silhouette that offers a casual and comfortable look. These T-shirts are designed to be roomy and oversized, providing a laid-back style that can be dressed up or down for various occasions.",
+        Name : "OversizedT-shirt",  
+        Highlights:"Loose & Relaxed Fit – Offers a roomy and comfortable silhouette.,Soft & Breathable Fabric – Typically made from cotton or cotton blends.,Versatile Styling – Can be worn with jeans shorts leggings or skirts.,Durable & Easy to Maintain – High-quality oversized tees retain their shape after multiple washes.,Available in Various Colors & Patterns – Choose from solid colors stripes and graphic prints.",
         images: [
           { src: OversizedTshirtimg1, alt: "Image 1" },
           { src: OversizedTshirtimg2, alt: "Image 2" },

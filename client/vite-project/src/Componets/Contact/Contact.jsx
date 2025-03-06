@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
@@ -22,6 +22,10 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+    
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   
   const handleSubmit = async (event) => {
@@ -63,12 +67,6 @@ function Contact() {
       setLoading(false);
     }
   };
-  
-  
-  
-  
-  
-  
   
 
   return (

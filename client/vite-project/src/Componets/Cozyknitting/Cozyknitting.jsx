@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import cozy1 from "../../assets/img/products/Ex3.jpg";
 import CozyKnitwear2 from "../../assets/img/products/Cozy Knitwear2.jpg";
 import CozyKnitwears from "../../assets/img/products/Cozy Knitwear3.jpg";
@@ -22,7 +22,7 @@ import CozyKnitwear2img1 from "../../assets/img/products/Cozy Knitwear3.jpg"
 import CozyKnitwear2img2 from "../../assets/img/products/Cozy Knitwear3.1.jpg"
 import CozyKnitwear2img3 from "../../assets/img/products/Cozy Knitwear3.2.jpg"
 import CozyKnitwear2img4 from "../../assets/img/products/Cozy Knitwear3.3.jpg"
-
+import { IoMdCloseCircle } from "react-icons/io";
 
 
 
@@ -38,8 +38,7 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
         <div className="p-3 rounded-lg shadow-lg max-w-8xl w-full">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-semibold">{title}</h2>
-            <button className="text-2xl font-semibold" onClick={onClose}>&times;</button>
-          </div>
+            <button className=" font-semibold" onClick={onClose}><IoMdCloseCircle className="w-8 h-8" /></button>          </div>
   
           {/* Image Gallery */}
           <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 ">
@@ -75,29 +74,29 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
           </div>
   
           {/* Product Info */}
-          {/* <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-            <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
-            </div>
-            
-            
-            <div className="mt-4 lg:row-span-3 lg:mt-0">
-              <h2 className="text-sm font-medium text-gray-900">Description</h2>
-              <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
-            </div>
+          <div className="mx-auto max-w-2xl px-4 pt-10 sm:px-6 lg:max-w-7xl lg:px-8 lg:pt-16 lg:pb-24 lg:grid lg:grid-cols-2 lg:gap-x-8">
   
-          
-            <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
-              <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
-                {Array.isArray(Highlights) && Highlights.length > 0 ? (
-                  Highlights.map((highlight, index) => <li key={index}>{highlight}</li>)
-                ) : (
-                  <li>No highlights available.</li>
-                )}
-              </ul>
-            </div>
-          </div> */}
+  <div>
+    <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
+    
+    <div className="mt-4">
+      <h2 className="text-sm font-medium text-gray-900">Description</h2>
+      <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
+    </div>
+  </div>
+  
+  <div className="mt-4 lg:mt-0">
+    <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
+    <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
+      {Array.isArray(Highlights) && Highlights.length > 0 ? (
+        Highlights.map((highlight, index) => <li key={index}>{highlight}</li>)
+      ) : (
+        <li>No highlights available.</li>
+      )}
+    </ul>
+  </div>
+  
+</div>
         </div>
       </div>
     );
@@ -110,13 +109,18 @@ const Cozyknitting = () => {
     setVisibleProductId((prevId) => (prevId === productId ? null : productId));
   };
 
+    
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const products = [
     {
       id: "Inner-Elastic-images",
-      title: "CozyKnitwear",
-      Discription:"Our high-quality panties are designed for comfort and style. Sign up for our subscription service to be the first to access new and exclusive releases. We also offer bulk production for businesses and special orders.",
-      Name : "Panties (Inner-Elastic)",
-      Highlights:"Hand cut and sewn locally,Dyed with our proprietary colors,Pre-washed & pre-shrunk,Ultra-soft 100% cotton",
+      title: "SUMMER T-SHIRT & SHORTS SET",
+      Discription:"Stay cool, stylish, and comfortable all summer long with our Women's T-Shirt & Shorts Set. Designed for effortless wear, this set combines a lightweight, breathable T-shirt with soft, airy shorts, making it perfect for warm days and relaxed outings.Crafted from premium, moisture-wicking fabric, this set keeps you fresh and dry while offering a relaxed yet flattering fit. Whether you're lounging at home, heading to the beach, or running errands, this versatile set ensures all-day comfort and ease.",
+      Name : "SUMMER T-SHIRT & SHORTS SET",
+      Highlights:"Breathable & Lightweight: Perfect for hot summer days,Soft & Comfortable Fit: Made with skin-friendly fabric for irritation-free wear,Versatile & Stylish: Ideal for casual outings lounging or vacation wear",
       images: [
         { src: CozyKnitwearimg1, alt: "Image 1" },
         { src: CozyKnitwearimg2, alt: "Image 2" },
@@ -129,10 +133,10 @@ const Cozyknitting = () => {
   const Cozywear = [
     {
       id: "Outer-Elastic-images",
-      Discription : "Our high-quality panties are designed for comfort and style. Sign up for our subscription service to be the first to access new and exclusive releases. We also offer bulk production for businesses and special orders.",
-      title: "CozyKnitwear",
-      Name : "Panties (Outer-Elastic)",
-      Highlights:"Hand cut and sewn locally,Dyed with our proprietary colors,Pre-washed & pre-shrunk,Ultra-soft 100% cotton",
+      title: "WOMEN'S HALF SHIRT & JOGGERS",
+      Discription:"Stay trendy and comfortable with our stylish Half Shirt & Embroidered Joggers Set. This perfect blend of casual and chic features a modern cropped half shirt paired with soft, embroidered joggers, offering a relaxed yet fashionable look.Made from breathable, high-quality fabric, this set ensures all-day comfort, whether you're lounging, working out, or stepping out in style. The joggers’ delicate embroidery adds an elegant touch, making this a must-have for any wardrobe.",
+      Name : "WOMEN'S HALF SHIRT & JOGGERS",
+      Highlights:"Breathable & Lightweight: Perfect for hot summer days,Soft & Comfortable Fit: Made with skin-friendly fabric for irritation-free wear,Versatile & Stylish: Ideal for casual outings lounging or vacation wear",
       images: [
         { src: CozyKnitwear1img1, alt: "Image 1" },
         { src: CozyKnitwear1img2, alt: "Image 2" },
@@ -146,10 +150,10 @@ const Cozyknitting = () => {
   const CozyKnitwear = [
     {
       id: "Cozy-images",
-      Discription : "Our high-quality panties are designed for comfort and style. Sign up for our subscription service to be the first to access new and exclusive releases. We also offer bulk production for businesses and special orders.",
-      title: "CozyKnitwear",
-      Name : "Panties (Outer-Elastic)",
-      Highlights:"Hand cut and sewn locally,Dyed with our proprietary colors,Pre-washed & pre-shrunk,Ultra-soft 100% cotton",
+      Discription : "Drift into comfort and style with our Short Pajama Set, designed for a lightweight and breathable feel. This set features a soft, airy top paired with comfortable shorts, making it perfect for a restful night's sleep or lounging at home.Crafted from skin-friendly, moisture-wicking fabric, it ensures cool, irritation-free wear all night long. The relaxed fit allows for easy movement, keeping you comfortable in every season.",
+      title: "WOMEN'S SHORT PAJAMA SET",
+      Name : "WOMEN'S SHORT PAJAMA SET",
+      Highlights:"Soft & Breathable Fabric: Keeps you cool and comfy,Relaxed Fit: Perfect for sleeping or lounging,Lightweight & Stylish: Ideal for warm nights and cozy mornings",
       images: [
         { src: CozyKnitwear2img1, alt: "Image 1" },
         { src: CozyKnitwear2img2, alt: "Image 2" },
@@ -207,7 +211,7 @@ const Cozyknitting = () => {
           {!visibleProductId && (
             <>
               {/* cozy Section */}
-              <h1 className="text-2xl font-semibold mb-4">Cozy</h1>
+              <h1 className="text-2xl font-semibold py-4">Cozy-Knitwear</h1>
               <div className="flex grid grid-cols-1 md:grid-cols-3 gap-6 " id="product-grid">
               <div className="">
                 {products.map((product) => (
@@ -273,7 +277,7 @@ const Cozyknitting = () => {
               
 
               {/* pants Section */}
-              <h1 className="text-2xl font-semibold mt-8 mb-4">Pants</h1>
+              <h1 className="text-2xl font-semibold mt-8 py-5">Pants</h1>
               <div className=" grid grid-cols-1 md:grid-cols-3 gap-6" id="product-grid">
               <div className="" id="product-grid">
                 

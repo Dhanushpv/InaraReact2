@@ -3,15 +3,15 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 import Banner from "../../assets/img/wooden-table.jpg"
-import mensShorts1 from "../../assets/img/products/mensShorts2.png"
-import mensShorts2 from "../../assets/img/products/mensShorts3.png"
-import mensShorts3 from "../../assets/img/products/mensShorts4.png"
-import mensShorts4 from "../../assets/img/products/mensShorts1.png"
+import mensShorts1 from "../../assets/img/products/mensShorts2.jpg"
+import mensShorts2 from "../../assets/img/products/mensShorts3.jpg"
+import mensShorts3 from "../../assets/img/products/mensShorts4.jpg"
+import mensShorts4 from "../../assets/img/products/mensShorts1.jpg"
 
-import MenTrackpants1 from "../../assets/img/products/Men'sTrackpants1.png"
-import MenTrackpants2 from "../../assets/img/products/Men'sTrackpants3.png"
-import MenTrackpants3 from "../../assets/img/products/Men'sTrackpants2.png"
-import MenTrackpants4 from "../../assets/img/products/Men'sTrackpants4.png"
+import MenTrackpants1 from "../../assets/img/products/Men'sTrackpants1.jpg"
+import MenTrackpants2 from "../../assets/img/products/Men'sTrackpants3.jpg"
+import MenTrackpants3 from "../../assets/img/products/Men'sTrackpants2.jpg"
+import MenTrackpants4 from "../../assets/img/products/Men'sTrackpants4.jpg"
 
 import LadiesUnderwear1 from "../../assets/img/products/catlog (11).jpg"
 import Cozyknitting1 from "../../assets/img/products/Ex3.jpg"
@@ -73,19 +73,18 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
         </div>
 
         {/* Product Info */}
-        {/* <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+        <div className="mx-auto max-w-2xl px-4 pt-10 sm:px-6 lg:max-w-7xl lg:px-8 lg:pt-16 lg:pb-24 lg:grid lg:grid-cols-2 lg:gap-x-8">
+  
+          <div>
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
+            
+            <div className="mt-4">
+              <h2 className="text-sm font-medium text-gray-900">Description</h2>
+              <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
+            </div>
           </div>
           
-          
-          <div className="mt-4 lg:row-span-3 lg:mt-0">
-            <h2 className="text-sm font-medium text-gray-900">Description</h2>
-            <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
-          </div>
-
-         
-          <div className="mt-10">
+          <div className="mt-4 lg:mt-0">
             <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
             <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
               {Array.isArray(Highlights) && Highlights.length > 0 ? (
@@ -95,12 +94,17 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
               )}
             </ul>
           </div>
-        </div> */}
+  
+        </div>
       </div>
     </div>
   );
 };
 function Products() {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
       const navigate = useNavigate();
       const [visibleProductId, setVisibleProductId] = useState(null);
 
@@ -111,6 +115,9 @@ function Products() {
         {
           id: "ActiveWear-images",
           title: "Shorts",
+          Discription:"Bermuda shorts are knee-length shorts designed for both casual and semi-formal wear. Known for their relaxed fit and breathable fabric, they offer a perfect balance between comfort and style. These shorts are a great choice for summer outings, vacations, and everyday wear. They are available in a variety of colors and patterns to suit your personal style.",
+          Name : "Men’s Vest",
+          Highlights:"Comfortable & Stylish – Designed for a relaxed fit and a trendy look.,Breathable Fabric – Made of lightweight materials to keep you cool.,Versatile – Suitable for casual and semi-formal occasions.,Variety of Colors – Available in a range of colors and patterns.,Easy to Care For – Machine washable for easy maintenance.",
           images: [
             { src: mensShorts1, alt: "Image 1" },
             { src: mensShorts2, alt: "Image 2" },
@@ -123,6 +130,9 @@ function Products() {
         {
           id: "Men'sTrackpants-images",
           title: "Tracks",
+          Discription:"Track pants are a type of athletic wear designed for comfort and flexibility. They are made of soft, stretchy fabric that allows for easy movement during physical activities. These pants are perfect for workouts, sports, and casual wear. They are available in a variety of colors and styles to suit your personal taste.",
+          Name : "Men’s Track Pants",
+          Highlights:"Comfortable & Stylish – Designed for a relaxed fit and a trendy look.,Breathable Fabric – Made of lightweight materials to keep you cool.,Versatile – Suitable for workouts sports and casual wear.,Variety of Colors – Available in a range of colors and patterns.,Easy to Care For – Machine washable for easy maintenance.",
           images: [
             { src: MenTrackpants1, alt: "Image 1" },
             { src: MenTrackpants2, alt: "Image 2" },

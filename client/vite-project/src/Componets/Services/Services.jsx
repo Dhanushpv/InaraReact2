@@ -24,6 +24,10 @@ import CustomisedService4 from "../../assets/img/Services/custom_services4.jpg"
 
 function Services() {
       const navigate = useNavigate();
+        
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 return (
 
 <>

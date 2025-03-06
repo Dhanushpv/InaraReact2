@@ -17,6 +17,10 @@ import PremiumFabricsimg1 from "../../assets/img/Premium Fabricsimg1.jpg"
 
 function About() {
       const navigate = useNavigate();
+        
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 return (
 
 <>

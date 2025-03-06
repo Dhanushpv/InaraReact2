@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useEffect, useState } from "react"; 
 import ActiveWear1 from "../../assets/img/products/Active Wear1.jpg";
 import ActiveWear2 from "../../assets/img/products/Active Wear2.jpg";
 import ActiveWear3 from "../../assets/img/products/Active Wear3.jpg";
@@ -6,14 +6,15 @@ import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 
 import ActiveWearimg1 from "../../assets/img/products/Active Wear1.jpg"
-import ActiveWearimg2 from "../../assets/img/products/Active Wear1.3.png"
-import ActiveWearimg3 from "../../assets/img/products/Active Wear1.2.png"
+import ActiveWearimg2 from "../../assets/img/products/Active Wear1.3.jpg"
+import ActiveWearimg3 from "../../assets/img/products/Active Wear1.2.jpg"
 import ActiveWearimg4 from "../../assets/img/products/Active Wear1.5.jpg"
 
-import Nightwear1 from "../../assets/img/products/Nightwear2.png"
+import Nightwear1 from "../../assets/img/products/Nightwear2.jpg"
 import Nightwear2 from "../../assets/img/products/Active Wear2.jpg"
-import Nightwear3 from "../../assets/img/products/Nightwear3.png"
-import Nightwear4 from "../../assets/img/products/Nightwear1.png"
+import Nightwear3 from "../../assets/img/products/Nightwear3.jpg"
+import Nightwear4 from "../../assets/img/products/Nightwear1.jpg"
+import { IoMdCloseCircle } from "react-icons/io";
 
 
 
@@ -29,8 +30,7 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
         <div className="p-3 rounded-lg shadow-lg max-w-8xl w-full">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-semibold">{title}</h2>
-            <button className="text-2xl font-semibold" onClick={onClose}>&times;</button>
-          </div>
+            <button className=" font-semibold" onClick={onClose}><IoMdCloseCircle className="w-8 h-8" /></button>          </div>
   
           {/* Image Gallery */}
           <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 ">
@@ -66,29 +66,29 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
           </div>
   
           {/* Product Info */}
-          {/* <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-            <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
-            </div>
+          <div className="mx-auto max-w-2xl px-4 pt-10 sm:px-6 lg:max-w-7xl lg:px-8 lg:pt-16 lg:pb-24 lg:grid lg:grid-cols-2 lg:gap-x-8">
+          
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{Name || "Product Name"}</h1>
             
-         
-            <div className="mt-4 lg:row-span-3 lg:mt-0">
+            <div className="mt-4">
               <h2 className="text-sm font-medium text-gray-900">Description</h2>
               <p className="text-base text-gray-900 mt-2">{Discription || "No description available."}</p>
             </div>
+          </div>
+          
+          <div className="mt-4 lg:mt-0">
+            <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
+            <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
+              {Array.isArray(Highlights) && Highlights.length > 0 ? (
+                Highlights.map((highlight, index) => <li key={index}>{highlight}</li>)
+              ) : (
+                <li>No highlights available.</li>
+              )}
+            </ul>
+          </div>
   
-           
-            <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
-              <ul className="mt-4 list-disc space-y-2 pl-4 text-sm text-gray-600">
-                {Array.isArray(Highlights) && Highlights.length > 0 ? (
-                  Highlights.map((highlight, index) => <li key={index}>{highlight}</li>)
-                ) : (
-                  <li>No highlights available.</li>
-                )}
-              </ul>
-            </div>
-          </div> */}
+        </div>
         </div>
       </div>
     );
@@ -103,14 +103,20 @@ const ActiveWear = () => {
     setVisibleProductId((prevId) => (prevId === productId ? null : productId));
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 
   const ActiveWears = [
     {
       id: "ActiveWear-images",
-      title: "ActiveWear",
+      title: "COTTON BLOUSE/TOP",
+      Discription:"Add a touch of elegance and comfort to your wardrobe with our Frill-Trimmed Cotton Top, Blouse, Lace Blouse, or Pintucked Blouse. Designed with delicate frill details, this top adds a feminine and stylish flair to any outfit while ensuring breathable, all-day comfort.",
+      Name : "COTTON BLOUSE/TOP",
+      Highlights:"Blue Blouse: A casual soft and flowing fabric perfect for everyday wear.,	Brown Blouse: A dressy blouse with ruffle details ideal for semi-formal occasions,Pink Blouse: A delicate possibly lace-trimmed blouse for an elegant touch,	Grey Blouse: A structured blouse suitable for business casual settings.",
       images: [
-        { src: ActiveWearimg1, alt: "Image 1" },
+        { src: ActiveWearimg1, alt: "Image 1" },  
         { src: ActiveWearimg2, alt: "Image 2" },
         { src: ActiveWearimg3, alt: "Image 3" },
         { src: ActiveWearimg4, alt: "Image 4" },
@@ -120,7 +126,10 @@ const ActiveWear = () => {
   const ActiveWears1 = [
     {
       id: "ActiveWear-images1",
-      title: "Nightwear",
+      title: "SHORT NIGHTWEAR",
+      Discription:"Enjoy a comfortable and stylish night's sleep with our Short Nightwear Collection. Designed for breathability and ease, these pieces offer a lightweight, relaxed fit, perfect for warm nights or lounging at home.Crafted from soft, skin-friendly fabrics, they provide maximum comfort while ensuring a chic and effortless look. Whether you prefer short pajama sets, nightdresses, or camisole sets, our collection has something for everyone",
+      Name : "SHORT NIGHTWEAR",
+      Highlights:"Soft & Breathable Fabric: Keeps you cool and cozy all night,Lightweight & Relaxed Fit: Ideal for warm weather.,Stylish & Comfortable: Perfect for sleep or lounging",
       images: [
         { src: Nightwear1, alt: "Image 1" },
         { src: Nightwear2, alt: "Image 2" },
