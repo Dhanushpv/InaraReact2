@@ -12,7 +12,7 @@ import { PiEnvelopeSimpleFill } from "react-icons/pi";
 import { MdOutlinePhone } from "react-icons/md";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
-import Carousel from "../../assets/img/hero-carousel/inaraintro.gif"
+import Carousel from "../../assets/img/hero-carousel/inaraintro2.gif"
 import Carousel1 from "../../assets/img/hero-carousel/inaraintro1.jpg"
 import Carousel2 from "../../assets/img/hero-carousel/inaraintro2.jpg"
 import Carousel3 from "../../assets/img/hero-carousel/inaraintro3.jpg"
@@ -30,10 +30,17 @@ import icon3 from "../../assets/img/icons/Production.png"
 import Services from "../../assets/img/Services/custom_services4.jpg"
 import AltServices from "../../assets/img/cotton2.jpg"
 import Inaraicon from "../../assets/img/icons/inara2.png"
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 
 function Home() {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+  
    const [formData, setFormData] = useState({
       name: "",
       email: "",
@@ -240,18 +247,18 @@ return (
       <div className="">
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8 sm:pb-32">
           <div className="sm:max-w-lg z-50 relative">
-            <h1 className="text-xl font-bold tracking-tight text-gray-900 sm:text-4xl pt-5">
+            <h1 className="text-xl font-bold tracking-tight text-gray-900 sm:text-4xl pt-5 font-times">
               Over 25 Years of Experience in the Textile Industry
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-gray-600">
-              With over 25 years in the textiles and knitted garments game,
+            <p className="mt-6 text-lg leading-relaxed font-times text-gray-600">
+              With over 15 years in the textiles and knitted garments game,
               we’re a top-notch private label manufacturer focused on making
               your ideas a reality. We’re all about quality and innovation,
               creating great clothing for women, men, and kids. Our skilled
               craftsmanship and careful attention to detail mean that every
               piece we make meets the highest standards in the industry.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-gray-600 subtext_ex">
+            <p className="mt-4 text-lg leading-relaxed text-gray-600 subtext_ex font-times">
               Whether you’re looking for sustainable fabrics, custom designs, or
               large-scale production, we’ve got you covered. Join the countless
               businesses that trust us to deliver excellence every time.
@@ -335,12 +342,12 @@ return (
     {/* Services Section */}
     <section id="services" className="services section light-background">
       {/* Section Title */}
-      <div className="container section-title" data-aos="fade-up">
-        <h2>Our Capabilities</h2>
-        <p>
+      <div className=" section-title  mx-auto" data-aos="fade-up">
+        <div className="font-times text-center text-4xl">Our Capabilities</div>
+        <span className="font-times text-center">
           We deliver high-quality manufacturing solutions that ensure customer
           satisfaction.
-        </p>
+        </span>
       </div>
       {/* End Section Title */}
       <div className="container tex">
@@ -559,7 +566,8 @@ return (
     </section>
     {/* /Alt Services Section */}
     {/* Get Started Section */}
-    <section id="get-started" className="get-started section container pb-5 ">
+    <section id="get-started" className="get-started section container pb-5 " data-aos="fade-up"
+              data-aos-delay={300}>
       <div className="border">
         <div className="bg-gray-400">
           <div className="flex flex-wrap min-h-screen">
@@ -674,7 +682,7 @@ return (
     </section>
     {/* /Get Started Section */}
   </main>
-<Footer/>
+  <div data-aos="fade-up" data-aos-delay={300}>  <Footer  /> </div>
   {/* Scroll Top */}
   <a
     href="#"

@@ -6,6 +6,7 @@
     --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --heading-font: "Roboto",  sans-serif;
     --nav-font: "Poppins",  sans-serif;
+    --my-font: "Times New Roman", serif;
   }
   
   /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -54,9 +55,12 @@
   body {
     color: var(--default-color);
     background-color: var(--background-color);
-    font-family: var(--default-font);
+    /* font-family: var(--default-font); */
   }
-  
+  .font-times {
+    font-family: var(--my-font);
+    text-align: justify;
+  }
   a {
     color: var(--accent-color);
     text-decoration: none;
@@ -73,9 +77,11 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  p {
     color: var(--heading-color);
-    font-family: var(--heading-font);
+    font-family: var(--my-font);
+    
   }
   
   /* PHP Email Form Messages
@@ -217,7 +223,7 @@
       color: black;
       font-size: 14px;
       padding: 0 2px;
-      font-family: var(--nav-font);
+      font-family: var(--my-font);
       font-weight: 500;
       display: flex;
       align-items: center;
@@ -484,7 +490,7 @@
   
   .footer .footer-about .logo span {
     color: var(--heading-color);
-    font-family: var(--heading-font);
+    font-family: var(--my-font);
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -492,7 +498,7 @@
   
   .footer .footer-about p {
     font-size: 14px;
-    font-family: var(--heading-font);
+    font-family: var(--my-font);
   }
   
   .footer .social-links a {

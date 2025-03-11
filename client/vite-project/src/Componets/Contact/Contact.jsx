@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 import Banner from "../../assets/img/wooden-table.jpg";
-import axios from "axios";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Contact() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -74,7 +78,8 @@ function Contact() {
       <Nav />
       <main className="main py-24 p-8">
         {/* Page Title */}
-        <div className="pt-14">
+        <div className="pt-14" data-aos="zoom-out"
+      data-aos-delay={100}>
           <div className="bg-white overflow-hidden rounded-[15px] sm:h-auto lg:h-full">
             <div className="relative isolate px-4 sm:px-6 lg:px-8">
               <div
@@ -88,7 +93,8 @@ function Contact() {
                 />
               </div>
               <div className="mx-auto max-w-2xl py-16 sm:py-20 lg:py-32">
-                <div className="text-center">
+                <div className="text-center" data-aos="fade-up"
+              data-aos-delay={300}>
                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight sm:leading-tight lg:leading-snug text-gray-950">
                     CONTACT US
                   </h1>
@@ -100,24 +106,28 @@ function Contact() {
 
         {/* Contact Section */}
         <section className="">
-          <div className="container mx-auto p-4">
+          <div className="container mx-auto p-4" data-aos="fade-up"
+              data-aos-delay={300}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* Address */}
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105" data-aos="fade-up"
+              data-aos-delay={300}>
                 <div className="flex items-center justify-center mb-4">
                   <i className="fas fa-map-marker-alt text-[#9AC8F7] text-3xl"></i>
                 </div>
-                <h2 className="text-center text-xl font-semibold mb-2">
+                <h2 className="text-center text-xl font-semibold mb-2" data-aos="fade-up"
+              data-aos-delay={300}>
                   Address
                 </h2>
-                <p className="text-center text-gray-700">
+                <p className="text-center text-gray-700" >
                   No.10, Kuppanna Gounder Street, Periyar Colony, Anupparpalayam
                   Pudur, TIRUPUR, TAMILNADU, INDIA 641603
                 </p>
               </div>
 
               {/* Call Us */}
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105" data-aos="fade-up"
+              data-aos-delay={300}>
                 <div className="flex items-center justify-center mb-4">
                   <i className="fas fa-phone-alt text-[#9AC8F7] text-3xl"></i>
                 </div>
@@ -128,7 +138,8 @@ function Contact() {
               </div>
 
               {/* Email */}
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105" data-aos="fade-up"
+              data-aos-delay={300}>
                 <div className="flex items-center justify-center mb-4">
                   <i className="fas fa-envelope text-[#9AC8F7] text-3xl"></i>
                 </div>
@@ -140,7 +151,8 @@ function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6" data-aos="fade-up"
+              data-aos-delay={300}>
               <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15658.655264650748!2d77.3179596!3d11.1383962!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9076e878788cf%3A0x48abfa3f87e64993!2sInara%20textiles%20%26%20Garments!5e0!3m2!1sen!2sin!4v1727717762211!5m2!1sen!2sin"
@@ -153,7 +165,8 @@ function Contact() {
               </div>
 
               {/* Form */}
-              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+              <div className="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105" data-aos="fade-up"
+              data-aos-delay={300}>
                 <form onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <input
@@ -220,7 +233,8 @@ function Contact() {
           </div>
         </section>
       </main>
-      <Footer />
+      <div data-aos="fade-up" data-aos-delay={300}>  <Footer  /> </div>
+     
     </>
   );
 }

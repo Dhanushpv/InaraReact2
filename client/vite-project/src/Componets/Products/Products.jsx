@@ -22,7 +22,8 @@ import Shorts1 from "../../assets/img/products/catlog (6).jpg"
 import MensTShirts1 from "../../assets/img/products/tShirt.jpg"
 import TrackPants1 from "../../assets/img/products/catlog (4).jpg"
 import { IoMdCloseCircle } from "react-icons/io";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 
@@ -31,6 +32,9 @@ const ProductImages = ({ title, images = [], onClose, Highlights, Discription, N
   // Ensure Highlights is always an array
   Highlights = typeof Highlights === "string" ? Highlights.split(",") : Highlights;
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -373,7 +377,7 @@ return (
     </div>
     {/* /Products Section */}
   </main>
-  <Footer />
+  <div data-aos="fade-up" data-aos-delay={300}>  <Footer  /> </div>
   {/* Scroll Top */}
   <a
     href="#"

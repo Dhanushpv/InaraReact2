@@ -11,11 +11,16 @@ import Serviceimg from "../../assets/img/Customer Serviceimg.jpg"
 import CustomerService from "../../assets/img/icons/Customer Service.png"
 import Sustainability from "../../assets/img/icons/Sustainability.png"
 import PremiumFabricsimg1 from "../../assets/img/Premium Fabricsimg1.jpg"
+import AOS from "aos";
+import "aos/dist/aos.css";
 
  
 
 
 function About() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
       const navigate = useNavigate();
         
     useEffect(() => {
@@ -221,7 +226,7 @@ return (
       </div>
     </section>
   </main>
-  <Footer />
+  <div data-aos="fade-up" data-aos-delay={300}>  <Footer  /> </div>
   {/* Scroll Top */}
   <a
     href="#"

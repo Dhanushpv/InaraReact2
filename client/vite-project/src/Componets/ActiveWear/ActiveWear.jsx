@@ -249,7 +249,7 @@ const ActiveWear = () => {
           )}
         </div>
       </div>
-      <Footer />
+      <div data-aos="fade-up" data-aos-delay={300}>  <Footer  /> </div>
     </main>
 
   );

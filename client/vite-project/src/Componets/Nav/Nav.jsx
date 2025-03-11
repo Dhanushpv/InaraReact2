@@ -35,11 +35,11 @@ function Nav() {
 
         <nav id="navmenu" className={`navmenu ${isMenuOpen ? "mobile-nav-active" : ""}`} aria-label="Primary Navigation">
           <ul className={isMenuOpen ? "open" : ""}>
-            <li><a onClick={() => handleNavigation("/")}>Home</a></li>
-            <li><a onClick={() => handleNavigation("/About")}>About</a></li>
-            <li><a onClick={() => handleNavigation("/Services")}>Services</a></li>
-            <li><a onClick={() => handleNavigation("/Products")}>Products</a></li>
-            <li><a onClick={() => handleNavigation("/Contact")}>Contact</a></li>
+            <li><a onClick={() => handleNavigation("/")} className="cursor-pointer  font-times">Home</a></li>
+            <li><a onClick={() => handleNavigation("/About")}className="cursor-pointer font-times">About</a></li>
+            <li><a onClick={() => handleNavigation("/Services")}className="cursor-pointer font-times">Services</a></li>
+            <li><a onClick={() => handleNavigation("/Products")}className="cursor-pointer font-times">Products</a></li>
+            <li><a onClick={() => handleNavigation("/Contact")}className="cursor-pointer font-times">Contact</a></li>
           </ul>
 
           {/* Mobile Menu Toggle */}

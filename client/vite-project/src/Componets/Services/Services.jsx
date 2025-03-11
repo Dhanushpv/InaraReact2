@@ -17,12 +17,16 @@ import CustomisedService2 from "../../assets/img/Services/custom_services2.jpg"
 import CustomisedService3 from "../../assets/img/Services/custom_services3.jpg"
 import CustomisedService4 from "../../assets/img/Services/custom_services4.jpg"
 
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
  
 
 function Services() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
       const navigate = useNavigate();
         
     useEffect(() => {
@@ -101,15 +105,15 @@ return (
           data-aos-delay={100}
         >
           <div className="lg:pr-4">
-            <div className="lg:max-w-lg">
-              <p className="text-base/7 font-semibold text-indigo-600">
+            <div className="lg:max-w-lg font-times">
+              <p className="text-base/7 font-semibold text-indigo-600 font-times ">
                 Delivering Excellence, Faster
               </p>
               <h1 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                 A Seamless Workflow
               </h1>
               <p className="mt-6 text-xl/8 text-gray-700 text-wrap text-justify">
-                At Inara Textiles and Garments, we take pride in our 25 years of
+                At Inara Textiles and Garments, we take pride in our 15 years of
                 expertise in the textiles and garments industry. Our streamlined
                 processes ensure that your requirements are met with precision
                 and speed. From concept to creation, we prioritize quality and
@@ -143,7 +147,7 @@ return (
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="text-justify">
+                  <span className="text-justify font-times">
                     <strong className="font-semibold text-gray-900 text-justify">
                       Tailored Solutions for Every Need :-
                     </strong>{" "}
@@ -166,7 +170,7 @@ return (
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="text-justify">
+                  <span className="text-justify font-times">
                     <strong className="font-semibold text-gray-900 text-justify">
                       Services You Can Rely On :-
                     </strong>
@@ -190,7 +194,7 @@ return (
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="text-justify">
+                  <span className="text-justify font-times">
                     <strong className="font-semibold text-gray-900 text-justify">
                       Additional Services :-
                     </strong>{" "}
@@ -233,11 +237,11 @@ return (
             className="rounded-lg bg-gray-100"
           />
         </div>
-        <div data-aos="fade-left" data-aos-delay={100}>
+        <div data-aos="fade-left" data-aos-delay={100} className="font-times">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Sample Making Service
           </h2>
-          <p className="mt-4 text-gray-500 text-justify">
+          <p className="mt-4 text-gray-500 text-justify font-times">
             Sample making services in the garment industry focus on creating
             prototype products that showcase the design and quality of garments.
             These services help clients visualize and refine their ideas before
@@ -245,14 +249,14 @@ return (
             individual designers to corporate clients.
           </p>
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-            <div className="border-t border-gray-200 pt-4">
+            <div className="border-t border-gray-200 pt-4 font-times">
               <dt className="font-medium text-gray-900">Sample Designs</dt>
               <dd className="mt-2 text-sm text-gray-500 text-justify">
                 Developing prototype designs that bring the client’s vision to
                 life for review and approval.
               </dd>
             </div>
-            <div className="border-t border-gray-200 pt-4">
+            <div className="border-t border-gray-200 pt-4 font-times">
               <dt className="font-medium text-gray-900">Branding Samples:</dt>
               <dd className="mt-2 text-sm text-gray-500 text-justify">
                 Producing prototypes with custom labels, tags, or embroidery to
@@ -311,7 +315,7 @@ return (
     
     <div className="bg-white" data-aos="fade-up" data-aos-delay={100}>
       <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-4 sm:px-6 sm:py-14 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
-        <div data-aos="fade-right" data-aos-delay={100}>
+        <div data-aos="fade-right" data-aos-delay={100} className="font-times">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Private Labeling Service
           </h2>
@@ -398,7 +402,7 @@ return (
 
 
     <div className="bg-white" data-aos="fade-up" data-aos-delay={100}>
-      <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4  sm:px-6 sm:py-14 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+      <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4  sm:px-6 sm:py-14 lg:max-w-7xl lg:grid-cols-2 lg:px-8 font-times">
         {/* Image grid for small screens */}
         <div className="image-grid grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 hidden lg:grid Customisedimg">
           <img
@@ -508,7 +512,7 @@ return (
 
 
   </main>
-  <Footer />
+  <div data-aos="fade-up" data-aos-delay={300}>  <Footer  /> </div>
   {/* Scroll Top */}
   <a
     href="#"
