@@ -13,6 +13,9 @@ import Sustainability from "../../assets/img/icons/Sustainability.png"
 import PremiumFabricsimg1 from "../../assets/img/Premium Fabricsimg1.jpg"
 import AOS from "aos";
 import "aos/dist/aos.css";
+import inaraintrovideo from "../../assets/img/hero-carousel/inaraintrovideo.mp4";
+import inaraintrogif from "../../assets/img/hero-carousel/inaraintrovideo.gif";
+
 
  
 
@@ -72,7 +75,7 @@ return (
           >
             <img
               className="rounded-lg"
-              src={Aboutimg1}
+              src={inaraintrogif}
             />
           </div>
           <div className="col-lg-7" data-aos="fade-up" data-aos-delay={100}>
@@ -115,17 +118,17 @@ return (
                 style, comfort, and durability for timeless and trend-forward
                 pieces.
               </p>
-              {/* <div className="watch-video d-flex align-items-center position-relative">
+              <div className="watch-video d-flex align-items-center position-relative">
               <RxVideo />
                 <a
-                  href="../src/assets/img/hero-carousel/inaraintro.gif"
+                  href={inaraintrovideo}
                   className="glightbox stretched-link"
                   data-type="video"
                   data-source="youtube"
                 >
                   Watch Video
                 </a>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
