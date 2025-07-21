@@ -1,7 +1,4 @@
 [build]
-  base = "vite-project"
-  command = "npm run build"
+  base = "client/vite-project"
   publish = "dist"
-
-[build.environment]
-  NODE_VERSION = "18"
+  command = "npm run build"

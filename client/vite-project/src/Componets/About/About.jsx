@@ -14,7 +14,7 @@ import PremiumFabricsimg1 from "../../assets/img/Premium Fabricsimg1.jpg"
 import AOS from "aos";
 import "aos/dist/aos.css";
 import inaraintrovideo from "../../assets/img/hero-carousel/inaraintrovideo.mp4";
-import inaraintrogif from "../../assets/img/hero-carousel/inaraintrovideo.gif";
+import inaraintrogif from "../../assets/img/hero-carousel/hero-carousel-4.jpg";
 
 
  
@@ -120,11 +120,12 @@ return (
               </p>
               <div className="watch-video d-flex align-items-center position-relative">
               <RxVideo />
-                <a
+                <a 
                   href={inaraintrovideo}
                   className="glightbox stretched-link"
                   data-type="video"
                   data-source="youtube"
+                  controls 
                 >
                   Watch Video
                 </a>
